@@ -32,7 +32,7 @@ const userCtrl = {
                 maxAge: 10*24*60*60*1000 // 10d
             })
 
-             res.json({accesstoken})
+            res.json({accesstoken})
         } catch (err) {
             return res.status(500).json({msg: "Hello " + err.message})
         }
@@ -127,7 +127,7 @@ const userCtrl = {
 
 
 const createAccessToken = (user) =>{
-    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '10m'})
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '10m '})
 }
 const createRefreshToken = (user) =>{
     return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '10d'})
